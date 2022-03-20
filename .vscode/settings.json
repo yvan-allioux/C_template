@@ -4,6 +4,7 @@
         "aire.h": "c",
         "stdio.h": "c",
         "functional": "c",
-        "power.h": "c"
+        "power.h": "c",
+        "unistd.h": "c"
     }
 }
