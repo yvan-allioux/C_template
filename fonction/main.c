@@ -11,12 +11,15 @@ int triple(int nombre)
 // La ligne suivante est le prototype de la fonction aireRectangle :
 //on met les prototype dans le fichier header c'est mieux
 int aireRectangle(double largeur, double hauteur);
-
+//prototype d'une fonction statique (portée uniquement dans ce fichier c)
+static int tripleStatic(int nombre);
 
 
 void maFonctionQuiNeRenvoisRienQuiPrintf(int nombre){
     printf("mon nombre %d\n", nombre);
 }
+
+
 
 
 int main()
@@ -43,4 +46,10 @@ int main()
 int aireRectangle(double largeur, double hauteur)
 {
     return largeur * hauteur;
+}
+
+//fonction statique (portée uniquement dans ce fichier c)
+static int tripleStatic(int nombre)
+{
+    // Instructions
 }

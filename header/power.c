@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <math.h>
+
 #include "power.h"
 
-int myPower(int a, int n)
+int multiplie(int a, int n)
 {
-    return power(a,n);
+    double result = a * n;
+       
+    return result;
 }

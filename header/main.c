@@ -1,7 +1,13 @@
 #include <stdio.h>
+
 #include "main.h"
 #include "aire.h"
 #include "power.h"
+
+/*
+on compile bien tout les .c
+gcc -O0 -g -W -Wall *.c -o main
+*/
 
 int triple(int nombre)
 {
@@ -29,9 +35,9 @@ int main()
     
     printf("valeur de i %d\n", i);
 
-    printf("power= %d\n", myPower(5, 10));
+    printf("power 3 * 4 = %d\n", multiplie(3, 4));
 
-    //printf("Rectangle de largeur 5 et hauteur 10. Aire = %d\n", aireRectangle(5, 10));
+    printf("Rectangle de largeur 5 et hauteur 10. Aire = %d\n", aireRectangle(5, 10));
 
     maFonctionQuiNeRenvoisRienQuiPrintf(2);
 
