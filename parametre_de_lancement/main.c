@@ -7,16 +7,8 @@
 
 /*
 cecup 2 param en arc V1 cb decrivani
-2 cb de lecteur
 
-fonction ecrivain
-    print f
-fonction lecteur
-    print f
-
-ajouter les semaphore et metre des print f pour dir a cette endrois la je met dans le tableau
-
-en 4 on rajoute le tableau */
+*/
 
 
 int main(int argc, char *argv[])

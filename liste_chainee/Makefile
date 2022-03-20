@@ -1,5 +1,5 @@
-main: main.o
-	gcc -g -O0 main.o -o main
+liste: liste.o
+	gcc -g -O0 liste.o -o liste
 
 #enleve les optimisation du compilateur 
 #ajoute les simbole du debugage
