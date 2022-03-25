@@ -1,36 +1,32 @@
-/* En-tete de liste
-   ----------------
-   objectif : définir le TAA liste */
-
 #ifndef _Liste_h
 #define _Liste_h
 
-// définir le type T_liste (typedef ...)
 
-//definition de la structure tlist
+//definition de la structure type_liste
 typedef struct struct_maillon{
     //declaration d'un int
     int val;
     //declaration d'un type(de type pointeur sur struct_maillon) qui s'apel next
     struct struct_maillon * next;
-}type_liste;
+}type_maillon;
 
 
-/*typedef struct struct_premierMaillonListe{
+typedef struct struct_premierMaillonListe{
     //declaration d'un type(de type pointeur sur struct_maillon) qui s'apel premierMaillon
     struct struct_maillon* premierMaillon;
-}type_premierMaillonListe;*/
+}type_liste;
 
-typedef type_maillon * type_liste;
+typedef type_liste * type_maillon;
 
 
 //prototypes des méthodes (sorte de template de methode que on va instancier ?)
 
 //creation liste vide
-T_liste creer_liste();
+type_liste creer_liste();
+
 
 //fonction pour voir si la liste est vide
-int isEmplyListe(liste *);
+//int isEmplyListe(type_liste *);
 
 //fonction pour avoir la taille de la liste
 
@@ -72,23 +68,21 @@ typedef struct sAjouEnTeteDeListe{
 //fonction pour aficher la lista
 
 // ajout en tete de liste de element avec modification de la liste
-void ajout_entete_liste(..., int element);
+void ajout_entete_liste(type_liste, int element);
 
 // ajout en tete selon une approche fonctionnelle sans modification de la liste
-T_liste ajouter_entete_fonc(..., int element);
+type_liste ajouter_entete_fonc(..., int element);
 
-// affichages
-// itératif
-void afficher_liste(...);
+//AFFICHAGE
+
+// affichages itératif
+void afficher_liste(type_liste);
 // récursif dans l ordre de la liste
-void fafficher_dir_liste(...);
+void afficher_liste_recursif(type_liste);
 // récursif dans l ordre inverse de la liste
-void fafficher_inv_liste(...);
-
-
-
+void fafficher_inv_liste(type_liste);
 
 
 // liberation de la mémoire
-void liberer_liste(?);
+void liberer_liste(type_liste);
 #endif
