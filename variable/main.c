@@ -8,7 +8,12 @@
 #define HAUTEUR_FENETRE  600
 #define NOMBRE_PIXELS    (LARGEUR_FENETRE * HAUTEUR_FENETRE) //calcul dans les directive de préproceseur
 
-
+/**
+ * @brief 
+ * compteur avec variable static qui s'incrémente à chaque appel (ne ce renitialise pas si on quite la fonction)
+ * @param nombre 
+ * @return int 
+ */
 int compteur(int nombre)
 {
     //variable static qui ne se suprime pas quand on termine la fonction
