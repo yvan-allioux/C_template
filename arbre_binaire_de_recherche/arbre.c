@@ -77,17 +77,16 @@ int rayon(T_Tree monArbreParam)
     }
 }
 
-
-//affichage de l'arbre
-void afficher_arbre2(T_Tree monArbreParam)
-{
+int afficher_arbre(T_Tree monArbreParam){
     if (monArbreParam == NULL)
     {
-        return;
+        return 0;
     }
     else
     {
-        switch (rayon(monArbreParam))
+        
+        //printf("poids %d\n", poids(monArbreParam));
+        switch (poids(monArbreParam))
         {
         case 0:
             printf("%d\n", monArbreParam->val);
@@ -111,18 +110,17 @@ void afficher_arbre2(T_Tree monArbreParam)
         default:
             break;
         }
-        //printf("%d\n", monArbreParam->val);
-        afficher_arbre2(monArbreParam->g);
-        afficher_arbre2(monArbreParam->d);
+        
+        return 1 + afficher_arbre(monArbreParam->g) + afficher_arbre(monArbreParam->d);
     }
 }
 
 //affichage de l'arbre
-void afficher_arbre(T_Tree monArbreParam)
+void afficher_arbre2(T_Tree monArbreParam)
 {
     if (monArbreParam == NULL)
     {
-        return;
+        return 0;
     }
     else
     {
@@ -142,9 +140,7 @@ int main()
     monArbre = creation_ABR_exemple();
     printf("poids %d\n", poids(monArbre));
     printf("longeur/rayon %d\n", rayon(monArbre));
-    printf("-affichage 2-\n");
-    afficher_arbre2(monArbre);
     printf("-affichage-\n");
-    afficher_arbre(monArbre);
+    afficher_arbre2(monArbre);
     return 0;
 }
