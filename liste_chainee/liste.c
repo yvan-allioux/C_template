@@ -5,19 +5,37 @@
 
 
 //creation liste vide
-type_liste creer_liste(){
-    type_liste struct_premierMaillonListe = NULL;
-    return struct_premierMaillonListe;
+Liste creer_liste(){
+    Liste maListe;
+    maListe.premierMaillon = NULL;
+    return maListe;
 };
 
-//creation liste vide type_liste
+//creation liste vide Liste
 
-//ajout en tete de liste de element avec modification de la liste
 
 //ajout en tete de liste
-ajout_enete_liste(type_liste * maListe, int element){
+void ajout_entete_liste(Liste *maListe, int element){
     //ajout maillon
-    struct_maillon * pNouv = (struct_maillon*)maloc(siseof(struct_maillon));
+    Maillon* premierMaillon = maListe;
+    Maillon* pNouv = (Maillon*)maloc(siseof(Maillon));
+};
+
+//fonction
+int isEmplyListeFonction(Liste* maListe){
+    if(maListe->premierMaillon == NULL){
+        return 1;
+    }else{
+        return 0;
+    }
+};
+//procédure
+void isEmplyListeProcedure(Liste* maListe, int *isEmply){//isEmply est un pointeur vers une variable de test
+    if(maListe->premierMaillon == NULL){
+        *isEmply = 1;
+    }else{
+        *isEmply = 0;
+    }
 };
 
 // affichages
@@ -25,25 +43,27 @@ ajout_enete_liste(type_liste * maListe, int element){
 // itératif
 
 //afficher la liste
-void afficher_liste(){
-
-};
+//void afficher_liste(){};
 
 
 
 // récursif dans l ordre de la liste
-void fafficher_dir_liste();
+//void fafficher_dir_liste();
 // récursif dans l ordre inverse de la liste
-void fafficher_inv_liste();
+//void fafficher_inv_liste();
 
 // liberation de la mémoire
-void liberer_liste(type_liste);
+//void liberer_liste(Liste);
 
 
 
 main(){
-    type_liste maListe = creer_liste();
-    ajout_entete_liste(struct_premierMaillonListe, 1);
+    Liste maListe;
+    Liste maListe = creer_liste();
+
+    Liste* unPointeurSurListe = &maliste;
+    printf("isEmplyListe : %d", isEmplyListe(unPointeurSurListe));
+    ajout_entete_liste(*maListe, 11);
 
     /* ajout_entete_liste(struct_premierMaillonListe, 2);
     ajout_entete_liste(struct_premierMaillonListe, 3);

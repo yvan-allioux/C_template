@@ -20,10 +20,13 @@ int main()
     printf("aire : %d\n", monRectangle.aire);
     printf("perimetre : %d\n", monRectangle.perimetre);
 
-    monRectangle largeur, largeur2;
+    struct Rectangle monRectangle3, monRectangle4;
 
+    Coordonnees nuageDePoints[3];//on cree un tableau de 3 coordonnees
+    nuageDePoints[3].x = 1;
 
     Coordonnees point; // L'ordinateur comprend qu'il s'agit de "struct Coordonnees" grâce au typedef
+    Coordonnees point = {0, 0};//on remplit la structure point avec les valeurs 0,0 - point.x = 0 , point.y = 0
 
     point.x = 10;
     point.y = 20;// Initialisation des variables de la structure

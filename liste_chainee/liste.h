@@ -2,21 +2,25 @@
 #define _Liste_h
 
 
-//definition de la structure type_liste
-typedef struct struct_maillon{
+//definition du type Maillon
+typedef struct Maillon Maillon;
+//definition du type Liste
+struct Maillon{
     //declaration d'un int
     int val;
     //declaration d'un type(de type pointeur sur struct_maillon) qui s'apel next
     struct struct_maillon * next;
-}type_maillon;
+}
 
-
-typedef struct struct_premierMaillonListe{
+//definition du type Liste
+typedef struct Liste Liste;
+//definition de la struture Liste
+struct Liste{
     //declaration d'un type(de type pointeur sur struct_maillon) qui s'apel premierMaillon
-    struct struct_maillon* premierMaillon;
-}type_liste;
+    Maillon* premierMaillon;
+}
 
-typedef type_liste * type_maillon;
+
 
 
 //prototypes des méthodes (sorte de template de methode que on va instancier ?)
@@ -26,12 +30,12 @@ type_liste creer_liste();
 
 
 //fonction pour voir si la liste est vide
-//int isEmplyListe(type_liste *);
+int isEmplyListe(Liste* maListe);
 
 //fonction pour avoir la taille de la liste
 
 //fonction pour ajouter un element en tete de liste
-typedef struct sAjouEnTeteDeListe{
+//typedef struct sAjouEnTeteDeListe{
     
     /*
     creation de mon maillon avec mes 2 case la  (de type struct_maillon, une structure)
@@ -52,8 +56,8 @@ typedef struct sAjouEnTeteDeListe{
     */
      
     
-    struct_maillon * struct_premierMaillonListe = pNouv = (struct_maillon*)maloc;
-};
+/*     struct_maillon * struct_premierMaillonListe = pNouv = (struct_maillon*)maloc;
+}; */
 
 //fonction pour ajouter un element de la lista a une position donée
 
@@ -68,15 +72,15 @@ typedef struct sAjouEnTeteDeListe{
 //fonction pour aficher la lista
 
 // ajout en tete de liste de element avec modification de la liste
-void ajout_entete_liste(type_liste, int element);
+void ajout_entete_liste(Liste, int element);
 
 // ajout en tete selon une approche fonctionnelle sans modification de la liste
-type_liste ajouter_entete_fonc(..., int element);
+type_liste ajouter_entete_fonc(Liste, int element);
 
 //AFFICHAGE
 
 // affichages itératif
-void afficher_liste(type_liste);
+void afficher_liste(Liste);
 // récursif dans l ordre de la liste
 void afficher_liste_recursif(type_liste);
 // récursif dans l ordre inverse de la liste
@@ -85,4 +89,5 @@ void fafficher_inv_liste(type_liste);
 
 // liberation de la mémoire
 void liberer_liste(type_liste);
+
 #endif

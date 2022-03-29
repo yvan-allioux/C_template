@@ -142,8 +142,8 @@ int main()
     monArbre = creation_ABR_exemple();
     printf("poids %d\n", poids(monArbre));
     printf("longeur/rayon %d\n", rayon(monArbre));
-    printf("-affichage 2-\n");
-    afficher_arbre2(monArbre);
+    /* printf("-affichage 2-\n");
+    afficher_arbre2(monArbre); */
     printf("-affichage-\n");
     afficher_arbre(monArbre);
     return 0;
