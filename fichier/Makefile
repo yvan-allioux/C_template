@@ -1,4 +1,4 @@
-main: main.o
+main: *.o
 	gcc -O0 -g -W -Wall *.c -o main
 
 #enleve les optimisation du compilateur 

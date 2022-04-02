@@ -30,6 +30,9 @@ int main()
     long var2 = 2147483646;
     char monChar = 'A';
 
+
+
+
     char chaine[6]; // Tableau de 6 char pour stocker S-a-l-u-t + le \0
     // Initialisation de la chaîne (on écrit les caractères un à un en mémoire)
     chaine[0] = 'S';
@@ -39,8 +42,29 @@ int main()
     chaine[4] = 't';
     chaine[5] = '\0';
 
-    char chaine2[] = "Salut"; // La taille du tableau chaine est automatiquement calculée
+    char chaine3[] = "Salut"; // La taille du tableau chaine est automatiquement calculée
     
+    /* On crée 2 chaînes. chaine1 doit être assez grande pour accueillir
+    le contenu de chaine2 en plus, sinon risque de plantage */
+    char chaine1[100] = "Salut ", chaine2[] = "Mateo21";
+    strcat(chaine1, chaine2); // On concatène chaine2 dans chaine1
+    // Si tout s'est bien passé, chaine1 vaut "Salut Mateo21"
+    printf("chaine1 vaut : %s\n", chaine1);
+    // chaine2 n'a pas changé :
+    printf("chaine2 vaut toujours : %s\n", chaine2);
+    
+    if (strcmp(chaine1, chaine2) == 0) // Si chaînes identiques
+    {
+        printf("Les chaines sont identiques\n");
+    }
+    else
+    {
+        printf("Les chaines sont differentes\n");
+    }
+
+
+
+
 
 
     //constante
@@ -62,7 +86,7 @@ int main()
 
     // Affichage de la chaîne grâce au %s du printf
     printf("valeur de la chaine : %s\n", chaine);
-    printf("valeur de la chaine2 : %s\n", chaine2);
+    printf("valeur de la chaine3 : %s\n", chaine3);
 
     //les variable statique
     printf("mon compteur +1 : %d\n", compteur(1));

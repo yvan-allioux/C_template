@@ -15,28 +15,28 @@ Liste creer_liste(){
 
 
 //ajout en tete de liste
-void ajout_entete_liste(Liste *maListe, int element){
+void ajout_entete_liste(Liste* unPointeurSurListe, int element){
     //ajout maillon
-    Maillon* premierMaillon = maListe;
+    Maillon* premierMaillon = *unPointeurSurListe;
     Maillon* pNouv = (Maillon*)maloc(siseof(Maillon));
 };
 
 //fonction
-int isEmplyListeFonction(Liste* maListe){
+/* int isEmplyListeFonction(Liste* maListe){
     if(maListe->premierMaillon == NULL){
         return 1;
     }else{
         return 0;
     }
-};
+}; */
 //procédure
-void isEmplyListeProcedure(Liste* maListe, int *isEmply){//isEmply est un pointeur vers une variable de test
+/* void isEmplyListeProcedure(Liste* maListe, int *isEmply){//isEmply est un pointeur vers une variable de test
     if(maListe->premierMaillon == NULL){
         *isEmply = 1;
     }else{
         *isEmply = 0;
     }
-};
+}; */
 
 // affichages
 
@@ -57,18 +57,20 @@ void isEmplyListeProcedure(Liste* maListe, int *isEmply){//isEmply est un pointe
 
 
 
-main(){
+int main(){
+    printf("-----Les liste chainee-----\n");
     Liste maListe;
-    Liste maListe = creer_liste();
+    maListe = creer_liste();
 
     Liste* unPointeurSurListe = &maliste;
-    printf("isEmplyListe : %d", isEmplyListe(unPointeurSurListe));
-    ajout_entete_liste(*maListe, 11);
+    //printf("isEmplyListe : %d", isEmplyListe(unPointeurSurListe));
+    ajout_entete_liste(unPointeurSurListe, 11);
 
     /* ajout_entete_liste(struct_premierMaillonListe, 2);
     ajout_entete_liste(struct_premierMaillonListe, 3);
     afficher_liste(struct_premierMaillonListe);
     liberer_liste(struct_premierMaillonListe); */
+    return 0;
 }
 
 
