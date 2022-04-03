@@ -29,6 +29,9 @@ int main()
     printf("aire : %d\n", monRectangle.aire);
     printf("perimetre : %d\n", monRectangle.perimetre);
 
+    //taille des type de variable
+    printf("Rectangle taille : %d octets\n", sizeof(struct Rectangle) );
+
     struct Rectangle monRectangle3, monRectangle4;
 
     Coordonnees nuageDePoints[3];//on cree un tableau de 3 coordonnees
@@ -37,6 +40,8 @@ int main()
 
     Coordonnees point; // L'ordinateur comprend qu'il s'agit de "struct Coordonnees" grâce au typedef
     Coordonnees point2 = {3, 8};//on remplit la structure point avec les valeurs 0,0 - point.x = 0 , point.y = 0
+    
+    printf("Coordonnees taille : %d octets\n", sizeof(Coordonnees) );//taille des type de variable  
 
     point.x = 10;
     point.y = 20;// Initialisation des variables de la structure
