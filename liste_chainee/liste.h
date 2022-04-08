@@ -8,28 +8,28 @@ typedef struct Maillon Maillon;
 struct Maillon{
     //declaration d'un int
     int val;
-    //declaration d'un type(de type pointeur sur Maillon) qui s'apel next
-    struct Maillon* next;
+    //declaration d'un pointeur sur Maillon qui s'apel next
+    Maillon* next;
 };
 
 //definition du type Liste
 typedef struct Liste Liste;
 //definition de la struture Liste
 struct Liste{
-    //declaration d'un type(de type pointeur sur Maillon) qui s'apel premierMaillon
-    struct Maillon* premierMaillon;
+    //declaration d'un pointeur sur Maillon qui s'appel premierMaillon
+    Maillon* premierMaillon;
 };
 
 
 //prototypes des méthodes (sorte de template de methode que on va instancier ?)
 
 //creation liste vide
-Liste creer_liste();
+Liste* creer_liste();
 
 
 //fonction pour voir si la liste est vide
-int isEmplyListeFonction(Liste* maListe);
-int isEmplyListeProcedure(Liste* maListe);
+int isEmplyListeFonction(Liste*);
+void isEmplyListeProcedure(Liste*, int*);
 
 //fonction pour avoir la taille de la liste
 
@@ -71,7 +71,7 @@ int isEmplyListeProcedure(Liste* maListe);
 //fonction pour aficher la lista
 
 // ajout en tete de liste de element avec modification de la liste
-void ajout_entete_liste(*Liste, int element);
+void ajout_entete_liste(Liste* pointeurSurMaListe, int element);
 
 // ajout en tete selon une approche fonctionnelle sans modification de la liste
 Liste ajouter_entete_fonc(Liste, int element);
@@ -79,7 +79,7 @@ Liste ajouter_entete_fonc(Liste, int element);
 //AFFICHAGE
 
 // affichages itératif
-void afficher_liste(Liste);
+void afficher_liste(Liste*);
 // récursif dans l ordre de la liste
 void afficher_liste_recursif(Liste);
 // récursif dans l ordre inverse de la liste
