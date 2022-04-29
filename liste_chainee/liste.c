@@ -46,9 +46,10 @@ void isEmplyListeProcedure(Liste* ptMaListe, int* isEmply){//isEmply est un poin
 
 //affichages
 void afficher_liste(Liste* pointeurSurMaListe){
+    printf("---AFFICHER LISTE---\n");
     Maillon* ptSurUnMaillon = pointeurSurMaListe->premierMaillon;
 
-    if (ptSurUnMaillon != NULL){printf("Liste vide\n");}//si la liste est vide (ça pointe sur du NULL) on prévien quand meme on est pas des sauvage
+    if (isEmplyListeFonction(pointeurSurMaListe)){printf("Liste vide\n");}//si la liste est vide (ça pointe sur du NULL) on prévien quand meme on est pas des sauvage
 
     while (ptSurUnMaillon != NULL)
     {
@@ -59,10 +60,32 @@ void afficher_liste(Liste* pointeurSurMaListe){
     
 };
 
-// itératif
+void invercerListe(Liste* pointeurSurMaListe){
+    printf("---INVERCER LISTE---\n");
+    Maillon* ptSurUnMaillon = pointeurSurMaListe->premierMaillon;
 
-//afficher la liste
-//void afficher_liste(){};
+    if (isEmplyListeFonction(pointeurSurMaListe)){printf("Liste vide\n");}//si la liste est vide (ça pointe sur du NULL) on prévien quand meme on est pas des sauvage
+
+    Maillon* maillonPere = NULL;//q
+    Maillon* ancienPtSurUnMaillon = NULL;//r
+
+    while (ptSurUnMaillon->next != NULL)
+    {
+        ancienPtSurUnMaillon = ptSurUnMaillon->next;
+        printf("val invercerListe %d\n", ptSurUnMaillon->val);
+        ptSurUnMaillon->next = maillonPere;
+        
+        maillonPere = ancienPtSurUnMaillon;
+        ptSurUnMaillon = ancienPtSurUnMaillon;//on passe au maillon suivant
+    }
+    pointeurSurMaListe->premierMaillon = ancienPtSurUnMaillon;
+}
+
+
+void invercerListeRecurcif(Liste* pointeurSurMaListe){
+    printf("---INVERCER LISTE RECURCIF---\n");
+    
+}
 
 
 
@@ -108,6 +131,9 @@ int main(){
     }
 
 //AFFICHER LISTE
+    afficher_liste(pointeurSurMaListe);
+//INVERCER LISTE 
+    invercerListe(pointeurSurMaListe);
     afficher_liste(pointeurSurMaListe);
 
     /* ajout_entete_liste(struct_premierMaillonListe, 2);

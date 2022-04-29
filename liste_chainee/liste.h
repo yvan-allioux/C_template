@@ -26,6 +26,8 @@ struct Liste{
 //creation liste vide
 Liste* creer_liste();
 
+void invercerListe(Liste*);
+
 
 //fonction pour voir si la liste est vide
 int isEmplyListeFonction(Liste*);

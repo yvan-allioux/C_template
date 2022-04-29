@@ -5,6 +5,7 @@
 
 #include "arbre.h"
 
+//pois de l'arbre : nombre de valeur
 int poids(T_Tree monArbreParam)
 {
     if (monArbreParam == NULL)
@@ -64,7 +65,7 @@ T_Tree creation_ABR_exemple()
     return tree18;
 }
 
-//longueur de l'arbre
+//rayon de l'arbre
 int rayon(T_Tree monArbreParam)
 {
     if (monArbreParam == NULL)
@@ -92,10 +93,25 @@ void afficher_arbre(T_Tree monArbreParam)
     }
 }
 
+//affichage de l'arbre
+void affichage_complex_arbre(T_Tree monArbreParam)
+{
+    if (monArbreParam == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        printf("%d - pois %d\n", monArbreParam->val, poids(monArbreParam));
+        affichage_complex_arbre(monArbreParam->g);
+        affichage_complex_arbre(monArbreParam->d);
+    }
+}
+
 
 int main()
 {
-
+    printf("################################\n");
     T_Tree monArbre; // declaration d'un arbre
     monArbre = init_Tree();//initialisation de l'arbre
     //init_Tree(monArbre); // initialisation de l'arbre
@@ -104,5 +120,7 @@ int main()
     printf("longeur/rayon %d\n", rayon(monArbre));
     printf("-affichage-\n");
     afficher_arbre(monArbre);
+    printf("-affichage complex-\n");
+    affichage_complex_arbre(monArbre);
     return 0;
 }
