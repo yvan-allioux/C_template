@@ -20,6 +20,32 @@ void afficheTab(int taille, int *pTab){// ou void affiche(int taille, int pTab[]
     printf("####afficheTab#");
 }
 
+//recherche dichotomique dans un tableau
+int rechercheDichotomique(int taille, int pTab[], int valeur){
+    int i=0;
+    int milieu = 0;
+    int debut = 0;
+    int fin = taille-1;
+    int resultat = -1;
+    while (debut <= fin && resultat == -1)
+    {
+        milieu = (fin + debut)/2;
+        if (valeur == pTab[milieu])
+        {
+            resultat = milieu;
+        }
+        else if (valeur < pTab[milieu])
+        {
+            fin = milieu - 1;
+        }
+        else
+        {
+            debut = milieu + 1;
+        }
+    }
+    return resultat;
+}
+
 int main()
 {
     printf("les tableau\n");
@@ -40,6 +66,8 @@ int main()
 
     //tab contien l'adresse de la premiere case
     char tab2[3] = {'A','B','C'};
+
+    int tab6[14] = {10,11,13,14,15,16,17,18,19,20,21,22,23,24};
 
 
     printf("tab : la  2 eme case (11) : %d\n", tab[1]);
@@ -71,8 +99,10 @@ int main()
         printf("tableau %d\n", tableau[i]);
     }
     
-
+    printf("recherche dichotomique : %d\n", rechercheDichotomique(14, tab6, 15));
     
 
     return 0;
 }
+
+
