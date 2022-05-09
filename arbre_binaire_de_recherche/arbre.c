@@ -87,8 +87,8 @@ void afficher_arbre(T_Tree monArbreParam)
     }
     else
     {
-        printf("%d\n", monArbreParam->val);
         afficher_arbre(monArbreParam->g);
+        printf("%d\n", monArbreParam->val);
         afficher_arbre(monArbreParam->d);
     }
 }
@@ -120,7 +120,7 @@ int main()
     printf("longeur/rayon %d\n", rayon(monArbre));
     printf("-affichage-\n");
     afficher_arbre(monArbre);
-    printf("-affichage complex-\n");
-    affichage_complex_arbre(monArbre);
+    //printf("-affichage complex-\n");
+    //affichage_complex_arbre(monArbre);
     return 0;
 }

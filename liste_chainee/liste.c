@@ -60,6 +60,21 @@ void afficher_liste(Liste* pointeurSurMaListe){
     
 };
 
+//affichages recurcif
+void afficher_liste_recurcif(Maillon* ptSurUnMaillon){
+    if (ptSurUnMaillon != NULL){
+        printf("val %d\n", ptSurUnMaillon->val);
+        afficher_liste_recurcif(ptSurUnMaillon->next);
+    }
+};
+//affichages recurcif inverce
+void afficher_liste_recurcif_inverce(Maillon* ptSurUnMaillon){
+    if (ptSurUnMaillon != NULL){
+        afficher_liste_recurcif(ptSurUnMaillon->next);
+        printf("val %d\n", ptSurUnMaillon->val);
+    }
+};
+
 void invercerListe(Liste* pointeurSurMaListe){
     printf("---INVERCER LISTE---\n");
     Maillon* ptSurUnMaillon = pointeurSurMaListe->premierMaillon;
@@ -81,13 +96,10 @@ void invercerListe(Liste* pointeurSurMaListe){
     pointeurSurMaListe->premierMaillon = ancienPtSurUnMaillon;
 }
 
-
 void invercerListeRecurcif(Liste* pointeurSurMaListe){
     printf("---INVERCER LISTE RECURCIF---\n");
     
 }
-
-
 
 // récursif dans l ordre de la liste
 //void fafficher_dir_liste();
@@ -132,6 +144,9 @@ int main(){
 
 //AFFICHER LISTE
     afficher_liste(pointeurSurMaListe);
+    printf("-----afficher_liste_recurcif-----\n");
+    afficher_liste_recurcif(pointeurSurMaListe->premierMaillon);
+    printf("-----afficher_liste_recurcif fin-----\n");
 //INVERCER LISTE 
     invercerListe(pointeurSurMaListe);
     afficher_liste(pointeurSurMaListe);
