@@ -45,6 +45,28 @@ int rechercheDichotomique(int taille, int pTab[], int valeur){
     }
     return resultat;
 }
+//recherche dichotomique recursif
+int rechercheDichotomiqueRecursif(int taille, int pTab[], int valeur, int debut, int fin){
+    int milieu = 0;
+    int resultat = -1;
+    if (debut <= fin)
+    {
+        milieu = (fin + debut)/2;
+        if (valeur == pTab[milieu])
+        {
+            resultat = milieu;
+        }
+        else if (valeur < pTab[milieu])
+        {
+            resultat = rechercheDichotomiqueRecursif(taille, pTab, valeur, debut, milieu-1);
+        }
+        else
+        {
+            resultat = rechercheDichotomiqueRecursif(taille, pTab, valeur, milieu+1, fin);
+        }
+    }
+    return resultat;
+}
 
 int main()
 {
@@ -100,6 +122,7 @@ int main()
     }
     
     printf("recherche dichotomique : %d\n", rechercheDichotomique(14, tab6, 15));
+    printf("recherche dichotomique recurcif : %d\n", rechercheDichotomiqueRecursif(14, tab6, 15));
     
 
     return 0;
