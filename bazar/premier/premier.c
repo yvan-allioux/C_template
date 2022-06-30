@@ -3,7 +3,7 @@
 #include <time.h>
 
 
-#define LIMIT 500000
+#define LIMIT 492491
 
 
 int main()
@@ -11,6 +11,7 @@ int main()
     clock_t begin = clock();
 
     int i = 3;//compteur
+    int r = 0;//compteur de résultat
 
     while (i != LIMIT+1){
     //while (1){
@@ -25,6 +26,7 @@ int main()
             if(j == i-1){
                 printf("%d est premier\n", i);
                 //printf("premier");
+                r++;
             }
         }   
 
@@ -33,6 +35,7 @@ int main()
 
     clock_t end = clock();
     printf("Elapsed: %f seconds\n", (double)(begin - end) / CLOCKS_PER_SEC);
+    printf("%d nb premier trouvée\n", r);
 
     return 0;//0 success, 1 (ou any non-0) failure
 }
