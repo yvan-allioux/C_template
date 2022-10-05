@@ -3,6 +3,13 @@
 
 Ce repository contient des petits projets développer en C, utile pour se rappeler des différents concepts et utiliser ses bouts de code pour construire de plus grosses applications.
 
+lien utile:
+
+- https://pythontutor.com/visualize.html#mode=edit
+- https://en.cppreference.com/w/c
+- https://devdocs.io/c/
+- http://sdz.tdct.org/sdz/deboguer-son-programme-avec-gdb.html
+
 ### Niveau débutant
 
 - Fonction
